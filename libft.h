@@ -55,6 +55,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strnstr(const char *str1, const char *str2, size_t n);
 char	*ft_itoa(int n);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
