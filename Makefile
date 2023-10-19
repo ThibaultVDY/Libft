@@ -22,7 +22,11 @@ SRC_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c ft_lstlast.c
 
 SRCS	= ${addprefix ${PRE}/, ${SRC}}
 
+SRCS_B	= ${addprefix ${PRE}/, ${SRC_B}}
+
 OBJS	= ${SRCS:.c=.o}
+
+OBJS_B	= ${SRCS_B:.c=.o}
 
 CC	= gcc
 
@@ -38,11 +42,11 @@ ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${OBJS_B}
 
 fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: all clean flean re
+.PHONY: all clean fclean re bonus
