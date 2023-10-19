@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-monn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 21:35:14 by tle-monn          #+#    #+#             */
-/*   Updated: 2023/10/17 21:35:16 by tle-monn         ###   ########.fr       */
+/*   Created: 2023/10/17 21:34:53 by tle-monn          #+#    #+#             */
+/*   Updated: 2023/10/17 21:34:54 by tle-monn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str1, const char *str2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	j;
-
-	if (*str2 == '\0')
-		return ((char *)str1);
-	i = 0;
-	while (str1[i] && i < n)
+	while (*s != '\0')
 	{
-		j = 0;
-		while (str1[i + j] == str2[j] && (i + j) < n)
-		{
-			j++;
-			if (str2[j] == '\0')
-				return ((char *)str1 + i);
-		}
-		i++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
